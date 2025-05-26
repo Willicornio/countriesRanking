@@ -50,7 +50,16 @@ export const CountryDetails = () => {
   return (
     <div className="container mx-auto px-4 py-8 text-white">
       <CountryItem countryDetails={countryDetails}></CountryItem>
-      <NeighBornComponent borders={countryDetails.borders}></NeighBornComponent>
+
+      {countryDetails?.borders ? (
+        <NeighBornComponent
+          borders={countryDetails.borders}
+        ></NeighBornComponent>
+      ) : (
+        <div className="flex items-center text-white">
+          <div className="text-2xl">No tiene vecinos</div>
+        </div>
+      )}
     </div>
   );
 };
