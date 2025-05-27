@@ -6,7 +6,6 @@ export const HeaderComponent = ({ numberCountries = 0, searchBy }) => {
   useEffect(() => {searchBy(searchTerm)}, [searchTerm]);
   
   const onSearchChange = (inputValue) => {
-    console.log(inputValue)
     setSearchTerm(inputValue);
   };
 

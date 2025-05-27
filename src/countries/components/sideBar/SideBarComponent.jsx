@@ -28,13 +28,16 @@ export const SideBarComponent = ({ sortBy, filterBy }) => {
   };
 
   const toggleRegion = (region) => {
-    const updatedRegions = selectedFilters.selectedRegions.includes(region)
-      ? selectedFilters.selectedRegions.filter((r) => r !== region)
-      : [...selectedFilters.selectedRegions, region];
+    setSelectedFilters(prev => {
+      const isRegionSelected = prev.selectedRegions.includes(region);
+      const updatedRegions = isRegionSelected
+        ? prev.selectedRegions.filter((r) => r !== region)
+        : [...prev.selectedRegions, region];
 
-    setSelectedFilters({
-      ...selectedFilters,
-      selectedRegions: updatedRegions,
+      return {
+        ...prev,
+        selectedRegions: updatedRegions,
+      };
     });
   };
 
@@ -53,7 +56,7 @@ export const SideBarComponent = ({ sortBy, filterBy }) => {
   };
 
   return (
-    <section className="text-white w-80 p-4 space-y-4">
+    <section data-testid="sidebar" className="text-white w-80 p-4 space-y-4">
       <SortComponent
         sortOptions={sortOptions}
         onSortChange={onSortChange}

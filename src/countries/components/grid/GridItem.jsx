@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const GridItem = ({country}) => {
@@ -9,7 +8,7 @@ export const GridItem = ({country}) => {
           key={country?.name?.common}
           className="grid grid-cols-5 py-2 px-4 item-center text-white hover:bg-gray-700 transtition duration-200"
         >
-          <img src={country?.flags?.png} className="w-16 h-auto"></img>
+          <img alt={country?.name?.common} src={country?.flags?.png} className="w-16 h-auto"></img>
 
           <div>{country?.name?.common}</div>
           <div>{country?.population}</div>

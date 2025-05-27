@@ -3,6 +3,7 @@ import { CountryItemMainInfoComponent } from "./CountryItemMainInfoComponent";
 import { CountryItemAditonalInfoComponent } from "./CountryItemAditonalInfoComponent";
 
 export const CountryItem = ({ countryDetails }) => {
+  
   const navigate = useNavigate();
 
   const handleBack = () => {

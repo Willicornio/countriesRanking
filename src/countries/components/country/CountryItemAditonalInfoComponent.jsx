@@ -3,7 +3,7 @@ import React from "react";
 export const CountryItemAditonalInfoComponent = ({ countryDetails }) => {
   return (
     <>
-      <div className="space-y-6">
+      <div className="space-y-6"  data-testid="additional-info">
         <div className="bg-gray-800 p-6 rounded-lg">
           <h3 className="text-xl font-semibold mb-4">Información Adicional</h3>
           <div className="space-y-4">

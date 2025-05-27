@@ -3,7 +3,7 @@ import React from "react";
 export const CountryItemMainInfoComponent = ({ countryDetails }) => {
   return (
     <>
-      <div className="space-y-6">
+      <div className="space-y-6"  data-testid="main-info">
         <img
           src={countryDetails.flags?.svg || countryDetails.flags?.png}
           alt={
